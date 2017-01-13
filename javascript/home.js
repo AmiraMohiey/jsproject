@@ -40,3 +40,25 @@
      div1.className = "char";
 
  }
+
+ var score = document.getElementById("score");
+ var level = document.getElementById("level");
+ setInterval(inc_score, 1500);
+
+ function inc_score() {
+
+     var value = parseInt(score.innerText) + 1;
+     score.innerText = value;
+     if (value % 30 == 0) {
+         inc_level();
+     }
+
+ }
+
+ function inc_level() {
+
+     var value2 = parseInt(level.innerText) + 1;
+     level.innerText = value2;
+
+
+ }
