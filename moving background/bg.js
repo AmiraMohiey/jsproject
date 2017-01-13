@@ -55,10 +55,18 @@ function draw() {
 setInterval(draw, 10);
 
 */
-var keys = [];
-var elmnt = document.getElementById("image1");
 
-function leftArrowPressed() {
+// var keys = [];
+var elmnt = document.getElementById("image1");
+window.onmousemove = function (e) {
+    console.log(e.clientX);
+    if(e.clientX<1200 &&  e.clientY<600 ){
+        elmnt.style.left = e.clientX+'px';
+        elmnt.style.top = e.clientY+'px';
+    }
+}
+
+/*function leftArrowPressed() {
      
             elmnt.style.left = parseInt(elmnt.style.left) - 10 + 'px';
 }
@@ -97,4 +105,4 @@ function keysReleased(e) {
      
        rightArrowPressed(); 
     }
-}
+}*/

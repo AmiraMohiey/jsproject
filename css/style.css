@@ -13,14 +13,16 @@
 }*/
 
 #container {
-    background: url("mov.gif");
+    background: url("../images/mov.gif");
     position: absolute;
+    z-index: auto;
     width: 95%;
     height: 95%;
+
 }
 
-#image1 {
-    position: absolute;
+#ship {
+    position: relative;
     bottom: 00px;
     left: 10%;
     width: 3.5%;
