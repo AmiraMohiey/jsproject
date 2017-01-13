@@ -1,4 +1,4 @@
-var Ship = function (src, width , height , x , y , id) {
+var Ship = function(src, width, height, x, y, id) {
     this.src = src;
     this.h = height;
     this.w = width;
@@ -7,7 +7,7 @@ var Ship = function (src, width , height , x , y , id) {
     this.y = y;
     this.createShip();
 };
-Ship.prototype.createShip = function () {
+Ship.prototype.createShip = function() {
     // this.element = document.createElement('span');
     this.element = document.createElement('img');
     this.element.src = this.src;
@@ -21,10 +21,6 @@ Ship.prototype.createShip = function () {
 
 
     // this.element.appendChild(image);
-    var gamediv=document.getElementById("container")
+    var gamediv = document.getElementById("container")
     gamediv.appendChild(this.element);
 };
-
-
-
-
