@@ -3,8 +3,8 @@ var main = {
     timeInit: 0,
     shipX: document.innerWidth / 2,
     shipY: document.innerHeight / 2,
-    shipWidth: 35,
-    shipHeight: 60,
+    shipWidth: 150,
+    shipHeight: 150,
     iterations: 0,
     shipsrc: "images/r3.png",
     FINISH: false,
@@ -74,7 +74,7 @@ var main = {
 
 
         } else {
-            main.ship.element.src = "images/r2.png";
+            main.ship.element.src = "images/r.png";
 
         }
     }

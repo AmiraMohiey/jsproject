@@ -319,3 +319,21 @@ input[type=radio]:checked~label {
     line-height: 21px;
     color: gainsboro;
 }
+
+.gameover {
+    background-image: url('../images/mov.gif');
+    height: 100%;
+}
+
+.go {
+    position: relative;
+    left: -450px;
+}
+
+.pa {
+    position: relative;
+    left: 600px;
+    width: 120px;
+    bottom: -20px;
+    height: 60px;
+}
