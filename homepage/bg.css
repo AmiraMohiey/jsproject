@@ -4,22 +4,27 @@
 }
 
 #container {
-    background: url("mov.gif");
+    background: url("../images/mov.gif");
     position: absolute;
-    width: 70%;
-    height: 70%
+    z-index: auto;
+    width: 95%;
+    height: 95%;
+
 }
 
 #ship {
     position: relative;
     bottom: 00px;
-    left: 90%;
-    width: 5%;
+    left: 10%;
+    width: 3.5%;
 }
 
-#ship img {
-    width: 100%;
+
+.nocursor {
+    cursor:none;
 }
+
+
 
 .hidden {
     display: none;
