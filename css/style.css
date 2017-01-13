@@ -6,7 +6,7 @@
 #container {
     background: url("../images/mov.gif");
     position: absolute;
-    z-index: auto;
+    z-index: 0;
     width: 95%;
     height: 95%;
 }
@@ -208,118 +208,6 @@ input[type=radio]:checked~label {
 
 /*--------------------------------------*/
 
-#level {
-    position: absolute;
-    right: 300px;
-    top: 10px;
-    z-index: 300;
-    opacity: 0.65;
-}
-
-#livesh2 {
-    float: left;
-    margin-right: 1em;
-    font-size: 10;
-    font-weight: normal;
-    line-height: 21px;
-    text-transform: uppercase;
-    color: gainsboro;
-}
-
-#level p {
-    float: left;
-    width: 1em;
-    margin-right: 1em;
-    font-weight: bold;
-    line-height: 21px;
-    color: gainsboro;
-}
-
-#level div {
-    float: left;
-    width: 100px;
-    height: 5px;
-    overflow: hidden;
-    margin-top: 7px;
-    background-color: #7F7F7F;
-}
-
-#level div div {
-    float: none;
-    width: 0;
-    height: 5px;
-    overflow: hidden;
-    margin-top: 0;
-    background-color: #FF0000;
-}
-
-#lives {
-    position: absolute;
-    right: 150px;
-    top: 10px;
-    height: 21px;
-    overflow: hidden;
-    z-index: 300;
-    padding-right: 75px;
-    background-image: url('lives.gif');
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-}
-
-* html #lives {
-    filter: alpha(opacity=65);
-}
-
-.lost1 {
-    background-position: 100% -21px !important;
-}
-
-.lost2 {
-    background-position: 100% -42px !important;
-}
-
-.lost3 {
-    background-position: 100% -63px !important;
-}
-
-#lives h2 {
-    font-size: 100%;
-    font-weight: normal;
-    line-height: 21px;
-    text-transform: uppercase;
-    color: white;
-}
-
-#score {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 300;
-    opacity: 0.65;
-}
-
-* html #score {
-    filter: alpha(opacity=65);
-}
-
-#score h2 {
-    float: left;
-    margin-right: 1em;
-    font-size: 24;
-    text-transform: uppercase;
-    font-weight: normal;
-    line-height: 21px;
-    color: white;
-}
-
-#score p {
-    float: left;
-    width: 3em;
-    font-weight: bold;
-    line-height: 21px;
-    color: gainsboro;
-}
-
 .gameover {
     background-image: url('../images/mov.gif');
     height: 100%;
@@ -336,4 +224,65 @@ input[type=radio]:checked~label {
     width: 120px;
     bottom: -20px;
     height: 60px;
+}
+
+
+/*-------------*/
+
+.levelh2 {
+    position: relative;
+    top: 10px;
+    left: 100;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.levelp {
+    position: relative;
+    top: -28px;
+    left: 160px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.scoreh2 {
+    position: relative;
+    top: -70px;
+    left: 300;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.scorep {
+    position: relative;
+    top: -107px;
+    left: 365px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.statusdiv {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 150 px;
+    height: 30px;
+    background-color: black;
+}
+
+.badges {
+    position: relative;
+    top: -150px;
+    left: 900px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.badgim {
+    position: relative;
+    top: -200px;
+    left: 1000px;
+    font-size: 18;
+    width: 40px;
+    height: 40px;
 }
