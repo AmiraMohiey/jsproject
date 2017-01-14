@@ -49,7 +49,7 @@
 
      var value = parseInt(score.innerText) + 1;
      score.innerText = value;
-     if (value % 30 == 0) {
+     if (value % 10 == 0) {
          inc_level();
      }
 
@@ -59,6 +59,7 @@
 
      var value2 = parseInt(level.innerText) + 1;
      level.innerText = value2;
+     main.level_speed= parseInt(level.innerText)*4;
 
 
  }

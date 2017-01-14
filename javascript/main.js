@@ -1,6 +1,6 @@
 var main = {
     gameW: 1200,
-    gameH: 500,
+    gameH: 540,
     lastLoopRun: 0,
     timeInit: 0,
     shipX: document.innerWidth / 2,
@@ -14,6 +14,7 @@ var main = {
     btn2: document.getElementById("play"),
     score: document.getElementById("score"),
     level: document.getElementById("level"),
+    level_speed: parseInt(level.innerText)*4,
      astroids: [],
     astSizes:[50,100,150],
     lastGenerat: new Date().getTime(),
@@ -30,7 +31,7 @@ var main = {
 
     init: function() {
         main.btn2.addEventListener('click', main.clk2);
-        console.log("init");
+       
      
     },
     startGame: function(){
@@ -64,14 +65,14 @@ var main = {
             
             main.lastGenerat = new Date().getTime();
             var size = main.astSizes[main.random(main.astSizes.length)]
-            var astObj = new Astroid(main.random(main.gameW),20,size,"./images/asteroid1.gif",main.lastGenerat);
+            var astObj = new Astroid(main.random(main.gameW),-20,size,"./images/asteroid1.gif",Math.random() >= 0.5,main.lastGenerat);
             main.astroids.push(astObj);
             
             }
     },
     updatePosition: function(){
 
-       
+        console.log(main.level_speed);
         for (var i = 0; i < main.astroids.length; i++)
         {
             
@@ -83,8 +84,13 @@ var main = {
                 
                 main.astroids.splice(i, 1);
                 }            
-            else
-                main.astroids[i].y +=2 ;
+            else{
+
+                if(main.astroids[i].move)
+                    main.astroids[i].x +=main.level_speed;
+                main.astroids[i].y +=main.level_speed ;
+            }
+        
             
             
         }
