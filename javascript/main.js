@@ -10,6 +10,8 @@ var main = {
     FINISH: false,
     interval: 50,
     btn2: document.getElementById("play"),
+    score: document.getElementById("score"),
+    level: document.getElementById("level"),
 
 
 
@@ -77,8 +79,36 @@ var main = {
             main.ship.element.src = "images/r.png";
 
         }
+    },
+    inc_score: function() {
+
+        setInterval(function() {
+            var value = parseInt(score.innerText) + 1;
+            main.score.innerText = value;
+            if (value % 30 == 0) {
+                main.inc_level();
+            }
+        }, 1500)
+
+
+
+    },
+
+
+
+    inc_level: function() {
+
+        var value2 = parseInt(level.innerText) + 1;
+        level.innerText = value2;
+
+
     }
-}
+
+
+
+
+
+};
 
 
 

@@ -251,6 +251,7 @@ input[type=radio]:checked~label {
     left: 300;
     font-size: 18;
     color: papayawhip;
+    font-family: Brush Script MT, cursive;
 }
 
 .scorep {
