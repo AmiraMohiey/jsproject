@@ -125,13 +125,11 @@ span {
     padding-bottom: 20%;
 }
 
-.menu {
-    top: 40px;
+.menu2 {
     position: relative;
     background: url("../images/mov.gif");
-    width: 65%;
-    height: 85%;
-    left: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 

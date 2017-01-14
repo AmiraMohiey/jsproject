@@ -1,55 +1,19 @@
-<html style="height:100%">
-<!--<link rel="stylesheet" type="text/css" href="css/menu.css">-->
+<html>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<!--<link rel="stylesheet" type="text/css" href="css/menu.css">-->
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Space Jam</title>
+    <title>Test Move Object</title>
 
 
 </head>
 
-<body>
-    <!--<div class="menu">
-        <div id="menu">
-            <nav>
-                <UL>
-                    <li class="var_nav">
-                        <div class="link_bg"></div>
-                        <div class="link_title">
-                            <div class=icon>
-                                <i class="icon-mobile-phone icon-2x"></i>
-                            </div>
-                            <a id="play"><span>play</span></a>
-                        </div>
-                    </li>
-                    <li class="var_nav">
-                        <div class="link_bg"></div>
-                        <div class="link_title">
-                            <div class=icon>
-                                <i class="icon-lightbulb icon-2x"></i>
-                            </div>
-                            <a id="Instructions"><span>Instructions</span></a>
-                        </div>
-                    </li>
-                    <li class="var_nav">
-                        <div class="link_bg"></div>
-                        <div class="link_title">
-                            <div class=icon>
-                                <i class="icon-wrench icon-2x"></i>
-                            </div>
-                            <a id="settings"><span>Settings</span></a>
-                        </div>
-                    </li>
+<body style="padding:0;margin:0;overflow: hidden">
 
 
-
-                </ul>
-            </nav>
-        </div>
-    </div>-->
 
     <div class="start" id="start">
 
@@ -57,10 +21,13 @@
 
         <img class="imstart" src="images/st.png" id="letstart" />
 
-
-
     </div>
-    <div class="char" id="char">
+
+
+
+
+
+    <div class="hidden" id="char">
 
         <img class="im" src="images/1gif" id="play" />
         <img class="im1" src="images/r2.png" />
@@ -123,7 +90,8 @@
 
 
 
-    <div id="container" class="hidden">
+    <div id="container" class="hidden" style="width: 100%;
+    height: 100%">
 
         <!--<embed src="sound.wav" autostart="true" hidden="true" loop="true" />-->
 
@@ -145,7 +113,7 @@
             <p class="scorep" id="score">0</p>
 
             <h3 class="badges"> Badges:</h3>
-            <img src="images/badge.png" class="badgim" />
+            <img src="images/badge.png" class="badgim" /> 1
         </div>
 
 
@@ -168,6 +136,47 @@
     </div>
 
 
+
+    <div class="hidden" id="mainmenu">
+        <div id="menu">
+            <nav>
+                <UL>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-mobile-phone icon-2x"></i>
+                            </div>
+                            <a id="menuplaybtn"><span>play</span></a>
+                        </div>
+                    </li>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-lightbulb icon-2x"></i>
+                            </div>
+                            <a id="Instructions"><span>Instructions</span></a>
+                        </div>
+                    </li>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-wrench icon-2x"></i>
+                            </div>
+                            <a id="settings"><span>Settings</span></a>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
 
 
 </body>
