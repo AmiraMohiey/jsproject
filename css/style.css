@@ -287,3 +287,29 @@ input[type=radio]:checked~label {
     width: 40px;
     height: 40px;
 }
+
+
+/*-------------------*/
+
+
+/*​#menu nav {
+    margin: 35% 35%;
+}*/
+
+#menu {
+    width: 30%;
+    height: 30%;
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.menu {
+    top: 40px;
+    position: relative;
+    background: url("../images/mov.gif");
+    width: 65%;
+    height: 85%;
+    left: 50px;
+}
