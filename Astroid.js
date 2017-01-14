@@ -1,14 +1,6 @@
-var gamameW=1200;
-var gameH=570;
-var Astroid =function(x1,y1,w,img,id)
+
+var Astroid =function(x,y,w,img,id)
 {
-	this.img=img;
-	this.id=id;
-	this.w=w;
-	this.x=x1;
-	this.y=y1;
-	this.creatAstroid();
-	this.created=true;
 	
 
 	Object.defineProperty(this, 'x', {
@@ -18,19 +10,23 @@ var Astroid =function(x1,y1,w,img,id)
 			},
 			set: function (inx) 
 			{
-				console.log("xset")
+				//console.log("xset")
+			
 				x = inx;
 				//if astroid gotout of boarder
-				if ((x < this.w)||(x + this.w > gameW))
-				{
-					console.log("kill");
-					this.kill();            
-				  //  this.isGotOut = true;
-				}
-				else
-				{ 
-					console.log("move");	
-					this.ast.style.left = x + 'px';
+				if(!this.fristTime)
+				{	
+					if ((x < this.w)||(x + (this.w/2) > gameW))
+					{
+						this.out=true;
+						//this.kill();            
+					  //  this.isGotOut = true;
+					}
+					else
+					{ 
+						
+						this.ast.style.left = x + 'px';
+					}
 				}
 			}
 		});
@@ -40,57 +36,69 @@ var Astroid =function(x1,y1,w,img,id)
 				return y;
 			},
 			set: function (iny) {
-				y = iny
-				if ((y < this.w+5) ||(y > this.gameH)) 
-				{   
-					console.log("yout");
-					this.kill();
-				}
 
-				else
+				y = iny
+				if (!this.fristTime)
 				{
-					console.log("move");             
-					this.ast.style.top = y + 'px';
-				}       
+					
+					if ((y < 5) ||(y+this.w >gameH)) 
+					{   
+						console.log("yout");
+						this.out=true;
+						//this.kill();
+					}
+
+					else
+					{             
+						this.ast.style.top = y + 'px';
+					}       
+				}
 			}
 
 		});
+	this.fristTime=true;
+	this.out=false;
+	this.img=img;
+	this.id=id;
+	this.w=w;
+	this.x=x;
+	this.y=y;
+	this.creatAstroid();
+	this.fristTime=false;
+	
+	console.log("created");
 
 }
 Astroid.prototype.creatAstroid=function()
-{   console.log("creat");
+{   
 	this.ast = document.createElement('span');
 	var astimg= document.createElement('img')
 	astimg.src = this.img;
 	astimg.style.width= this.w + "px" 
 	this.ast.id = this.id
-	this.ast.style.position= "absolute";
-	this.ast.style.left = this.x + "px";
-	this.ast.style.top = this.y + "px";
-   // this.ast.style.width = this.w + "px";
-   // this.ast.style.height = this.h + "px";
+	
+
+    // this.ast.style.height = this.h + "px";
 	//this.astroid.classList.add(this.elementClass);
 	this.ast.appendChild(astimg);
 	var gamediv=document.getElementById("container")
 	gamediv.appendChild(this.ast);
-	
+	this.ast.style.position= "absolute";
+	this.ast.style.left = this.x + "px";
+	this.ast.style.top = this.y + "px";
 }
-Astroid.prototype.setPosition = function (x, y) {
-	if (x) {
-		this.x = x;
-	}
-	if (y) {
-		this.y = y;
-	}
-}
+
 
 
 Astroid.prototype.kill= function()
 {
+	
 	if (this.ast.parentNode)
 	{
+		
 		this.ast.children[0].style.display = 'none';	
 		this.ast.parentNode.removeChild(this.ast);
 	}
+
 }
 
