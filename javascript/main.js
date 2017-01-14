@@ -1,4 +1,6 @@
 var main = {
+    gameW: 1200,
+    gameH: 500,
     lastLoopRun: 0,
     timeInit: 0,
     shipX: document.innerWidth / 2,
@@ -12,14 +14,27 @@ var main = {
     btn2: document.getElementById("play"),
     score: document.getElementById("score"),
     level: document.getElementById("level"),
+     astroids: [],
+    astSizes:[50,100,150],
+    lastGenerat: new Date().getTime(),
+
+
+    random : function(size) {
+
+        return parseInt(Math.random() * size);
+    },
 
 
 
 
 
-
-    init: function(options) {
+    init: function() {
         main.btn2.addEventListener('click', main.clk2);
+        console.log("init");
+     
+    },
+    startGame: function(){
+
         main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
         window.onmousemove = function(e) {
             if (e.clientX < 1210) {
@@ -28,12 +43,54 @@ var main = {
             if (e.clientY < 590) {
                 ship.style.top = e.clientY + 'px';
             }
-            console.log(e.clientX, e.clientY)
+            
+
         }
-    }
+        main.loop();
+    },
 
-    ,
+    loop: function() {
 
+            
+        main.addAst();
+        main.updatePosition();
+            
+        
+        setTimeout(function(){main.loop();},40 );
+    },
+    addAst: function() {
+          
+          if ( new Date().getTime()-main.lastGenerat>1000 ){   
+            
+            main.lastGenerat = new Date().getTime();
+            var size = main.astSizes[main.random(main.astSizes.length)]
+            var astObj = new Astroid(main.random(main.gameW),20,size,"./images/asteroid1.gif",main.lastGenerat);
+            main.astroids.push(astObj);
+            
+            }
+    },
+    updatePosition: function(){
+
+       
+        for (var i = 0; i < main.astroids.length; i++)
+        {
+            
+           
+            if(main.astroids[i].out)
+                {
+               
+                main.astroids[i].kill();
+                
+                main.astroids.splice(i, 1);
+                }            
+            else
+                main.astroids[i].y +=2 ;
+            
+            
+        }
+
+    },
+   
 
 
 
@@ -49,15 +106,15 @@ var main = {
 
     clk2: function() {
 
+        main.startGame();
+        var characterScreen = document.getElementById("char");
+        characterScreen.className = 'hidden';
 
-        var div4 = document.getElementById("char");
-        div4.className = 'hidden';
+        var firstScreen = document.getElementById("start");
+        firstScreen.className = "hidden";
 
-        var div5 = document.getElementById("start");
-        div5.className = "hidden";
-
-        var div6 = document.getElementById("container");
-        div6.className = "nocursor ";
+        var gameScreen = document.getElementById("container");
+        gameScreen.className = "nocursor ";
 
         var rocket1 = document.getElementById("r1").checked;
         var rocket2 = document.getElementById("r2").checked;
@@ -79,6 +136,7 @@ var main = {
             main.ship.element.src = "images/r.png";
 
         }
+        
     },
     inc_score: function() {
 
