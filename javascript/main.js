@@ -14,12 +14,12 @@ var main = {
     btn2: document.getElementById("play"),
     score: document.getElementById("score"),
     level: document.getElementById("level"),
-     astroids: [],
-    astSizes:[50,100,150],
+    astroids: [],
+    astSizes: [50, 100, 150],
     lastGenerat: new Date().getTime(),
 
 
-    random : function(size) {
+    random: function(size) {
 
         return parseInt(Math.random() * size);
     },
@@ -31,9 +31,9 @@ var main = {
     init: function() {
         main.btn2.addEventListener('click', main.clk2);
         console.log("init");
-     
+
     },
-    startGame: function(){
+    startGame: function() {
 
         main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
         window.onmousemove = function(e) {
@@ -43,7 +43,7 @@ var main = {
             if (e.clientY < 590) {
                 ship.style.top = e.clientY + 'px';
             }
-            
+
 
         }
         main.loop();
@@ -51,46 +51,43 @@ var main = {
 
     loop: function() {
 
-            
+
         main.addAst();
         main.updatePosition();
-            
-        
-        setTimeout(function(){main.loop();},40 );
+
+
+        setTimeout(function() { main.loop(); }, 40);
     },
     addAst: function() {
-          
-          if ( new Date().getTime()-main.lastGenerat>1000 ){   
-            
+
+        if (new Date().getTime() - main.lastGenerat > 1000) {
+
             main.lastGenerat = new Date().getTime();
             var size = main.astSizes[main.random(main.astSizes.length)]
-            var astObj = new Astroid(main.random(main.gameW),20,size,"./images/asteroid1.gif",main.lastGenerat);
+            var astObj = new Astroid(main.random(main.gameW), 20, size, "./images/aestroid.png", main.lastGenerat);
             main.astroids.push(astObj);
-            
-            }
-    },
-    updatePosition: function(){
 
-       
-        for (var i = 0; i < main.astroids.length; i++)
-        {
-            
-           
-            if(main.astroids[i].out)
-                {
-               
+        }
+    },
+    updatePosition: function() {
+
+
+        for (var i = 0; i < main.astroids.length; i++) {
+
+
+            if (main.astroids[i].out) {
+
                 main.astroids[i].kill();
-                
+
                 main.astroids.splice(i, 1);
-                }            
-            else
-                main.astroids[i].y +=2 ;
-            
-            
+            } else
+                main.astroids[i].y += 2;
+
+
         }
 
     },
-   
+
 
 
 
@@ -136,7 +133,7 @@ var main = {
             main.ship.element.src = "images/r.png";
 
         }
-        
+
     },
     inc_score: function() {
 
