@@ -46,11 +46,13 @@ var main = {
 
         main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
         window.onmousemove = function(e) {
-            if (e.clientX < 1210) {
-                ship.style.left = e.clientX + 'px';
-            }
-            if (e.clientY < 590) {
-                ship.style.top = e.clientY + 'px';
+            if (!main.FINISH) {
+                if (e.clientX < 1210) {
+                    ship.style.left = e.clientX + 'px';
+                }
+                if (e.clientY < 590) {
+                    ship.style.top = e.clientY + 'px';
+                }
             }
 
 
@@ -61,12 +63,12 @@ var main = {
 
     loop: function() {
 
-        main.addAst();
+        if (!main.FINISH) { main.addAst(); }
         main.updatePosition();
         for (var i = 0; i < main.astroids.length; i++) {
             main.detectCollision(main.ship, main.astroids[i])
         }
-
+        main.level_speed = parseInt(level.innerText) * 2;
         setTimeout(function() { main.loop(); }, 40);
     },
     addAst: function() {
@@ -84,8 +86,6 @@ var main = {
 
 
         for (var i = 0; i < main.astroids.length; i++) {
-
-            console.log(i, main.astroids.length)
             if (main.astroids[i].out) {
 
                 main.astroids[i].kill();
@@ -101,7 +101,6 @@ var main = {
     },
     detectCollision: function(obj1, obj2) {
 
-        console.log("detectcol");
         var obj1x = parseInt(obj1.element.style.left);
         var obj1y = parseInt(obj1.element.style.top);
         var obj1w = parseInt(obj1.element.style.width);
@@ -130,6 +129,7 @@ var main = {
         main.characterScreen.className = "hidden";
         main.gameOverScreen.className = "hidden";
         main.mainmenu.className = "menu2";
+
     },
 
 
@@ -181,7 +181,7 @@ var main = {
 
     inc_score: function() {
 
-        setInterval(function() {
+        interval = setInterval(function() {
             var value = parseInt(score.innerText) + 1;
             main.score.innerText = value;
             if (value % 30 == 0) {
@@ -199,7 +199,7 @@ var main = {
 
         var value2 = parseInt(level.innerText) + 1;
         level.innerText = value2;
-        main.level_speed = parseInt(level.innerText) * 2;
+
 
     },
 
@@ -211,6 +211,21 @@ var main = {
         main.characterScreen.className = "hidden";
         main.ship.kill();
         main.btnPlayAgain.addEventListener('click', main.clkStart);
+        for (var i = 0; i < main.astroids.length; i++) {
+            console.log(i, main.astroids[i]);
+            main.astroids[i].kill();
+            console.log(main.astroids[i]);
+            main.astroids.splice(i, 1);
+            console.log(main.astroids[i]);
+
+        }
+        main.FINISH = true;
+        main.score.innerText = 0;
+        main.level.innerText = 1;
+        clearInterval(interval);
+
+
+
 
     }
 

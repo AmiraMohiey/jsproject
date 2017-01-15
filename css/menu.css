@@ -54,7 +54,7 @@ ul {
 
 .var_nav:hover .link_bg {
     width: 100%;
-    background: darkorange;
+    background: crimson;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -101,6 +101,7 @@ a {
     width: 100%;
     height: 70px;
     text-align: center;
+    font-size: 20;
 }
 
 span {
@@ -127,7 +128,8 @@ span {
 
 .menu2 {
     position: relative;
-    background: url("../images/mov.gif");
+    /*background: url("../images/mov.gif");*/
+    background-color: black;
     width: 100%;
     height: 100%;
 }
