@@ -18,7 +18,7 @@ var main = {
     gameOverScreen: document.getElementById("gameover"),
 
     btnStart: document.getElementById("letstart"),
-    btnChooseCharachter: document.getElementById("play"),
+    btnChooseCharachter: document.getElementById("back"),
     btnPlayAgain: document.getElementById("pa"),
 
     score: document.getElementById("score"),
@@ -26,7 +26,7 @@ var main = {
     astroids: [],
     astSizes: [50, 100, 150],
     lastGenerat: new Date().getTime(),
-    level_speed: parseInt(level.innerText) * 4,
+    level_speed: parseInt(level.innerText),
     mainmenu: document.getElementById("mainmenu"),
 
     random: function(size) {
@@ -46,10 +46,10 @@ var main = {
 
     },
     startGame: function() {
-        if (!main.FINISH) {
+        
             main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
             window.onmousemove = function(e) {
-          
+            if (!main.FINISH) {  
                 if (e.clientX < 1210) {
                     ship.style.left = e.clientX + 'px';
                 }
@@ -57,11 +57,10 @@ var main = {
                     ship.style.top = e.clientY + 'px';
                 }
             }
-
+            }
 
         
         main.inc_score();
-        }
         main.loop();
     },
 
@@ -72,7 +71,7 @@ var main = {
         for (var i = 0; i < main.astroids.length; i++) {
             main.detectCollision(main.ship, main.astroids[i])
         }
-        main.level_speed = parseInt(level.innerText) * 2;
+    
         setTimeout(function() { main.loop(); }, 40);
     },
     addAst: function() {
@@ -101,7 +100,7 @@ var main = {
                 main.astroids.splice(i, 1);
             } 
             else 
-            {1
+            {
                 
                 main.astroids[i].move(main.level_speed);
             }
@@ -132,32 +131,21 @@ var main = {
 
 
     clkStart: function() {
-        main.FINISH=false;
-        main.btnChooseCharachter.addEventListener('click', main.chooseCharacter);
+        
+        
         main.firstScreen.className = "hidden";
         main.gameScreen.className = "hidden";
         main.characterScreen.className = "hidden";
         main.gameOverScreen.className = "hidden";
         main.mainmenu.className = "menu2";
-        main.menuplaybtn.addEventListener('click', main.menuplay);
+        main.menuplaybtn.addEventListener('click', main.gamePlay);
         main.menusettingsbtn.addEventListener('click', main.menusettings);
         main.menuinstructionsbtn.addEventListener('click', main.menuinstructions);
-
+       
     },
 
 
-    menuplay: function() {
-
-
-        main.startGame();
-        main.characterScreen.className = 'hidden';
-        main.firstScreen.className = "hidden";
-        main.gameScreen.className = "nocursor ";
-        main.gameOverScreen.className = "hidden";
-        main.mainmenu.className = "hidden";
-     
-
-    },
+   
 
 
     menusettings: function() {
@@ -169,7 +157,7 @@ var main = {
         main.gameScreen.className = "hidden ";
         main.gameOverScreen.className = "hidden";
         main.mainmenu.className = "hidden";
-
+        main.btnChooseCharachter.addEventListener('click', main.clkStart);
 
 
     },
@@ -178,20 +166,14 @@ var main = {
     menuinstructions: function() {
 
 
-        main.startGame();
-        main.characterScreen.className = 'hidden';
-        main.firstScreen.className = "hidden";
-        main.gameScreen.className = "nocursor ";
-        main.gameOverScreen.className = "hidden";
-        main.mainmenu.className = "hidden";
-        main.ship.element.src = "images/r33.png";
+      
 
 
     },
 
 
-    chooseCharacter: function() {
-
+    gamePlay: function() {
+        main.FINISH=false;
         main.startGame();
         main.characterScreen.className = 'hidden';
         main.firstScreen.className = "hidden";

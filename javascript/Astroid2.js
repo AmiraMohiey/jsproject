@@ -7,7 +7,6 @@ var Astroid = function(img)
 	var xm = xmove[main.random(xmove.length)];
 	Component.call(this, main.random(main.gameW),-10,size,img,'astroid');
     this.move=function(level){
-    	console.log("move");
     	this.y+=4*level;
     	this.x+=xm*level*2;
     };

@@ -16,7 +16,6 @@ Component=function(x,y,w,img,classs)
 				
 				if ((x < 0)||(x + (this.w) > main.gameW))
 				{
-					console.log("xout");
 					this.out=true;
 					
 				}
@@ -40,7 +39,6 @@ Component=function(x,y,w,img,classs)
 					
 				if ((y < -150) ||(y >main.gameH)) 
 				{   
-					console.log("yout");
 					this.out=true;
 					
 				}
@@ -81,13 +79,12 @@ Component.prototype.creatComponent=function()
 	gamediv.appendChild(this.ast);
 	
 }
-Component.prototype.move=function(){}
+//Component.prototype.move=function(){}
 
 
 
 Component.prototype.kill= function()
 {
-	console.log("kill");
 	if (this.ast.parentNode)
 	{
 		
