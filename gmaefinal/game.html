@@ -1,0 +1,199 @@
+<html>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Test Move Object</title>
+
+
+</head>
+
+<body style="padding:0;margin:0;overflow: hidden">
+
+
+
+    <div class="start" id="start">
+
+        <img class="logo" src="images/sj" id="logo" />
+
+        <img class="imstart" src="images/st.png" id="letstart" />
+
+    </div>
+
+
+
+
+    <div class="hidden" id="char">
+
+        <img class="im" src="images/back.png" id="back" />
+        <img class="im1" src="images/r2.png" />
+
+
+        <img class="im2" src="images/r33.png" />
+
+        <img class="im3" src="images/r3.png" />
+
+        <div class="menu">
+            <h2>choose a character </h2>
+
+            <ul>
+                <li>
+                    <input type="radio" id="r1" name="selector" value="1">
+                    <label for="r1"></label>
+
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <input type="radio" id="r2" name="selector" value="2">
+                    <label for="r2"></label>
+
+                    <div class="check">
+                        <div class="inside">
+
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <input type="radio" id="r3" name="selector" value="2">
+                    <label for="r3"></label>
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div id="container" class="hidden" style="width: 100%;
+    height: 100%">
+
+        <!--<embed src="sound.wav" autostart="true" hidden="true" loop="true" />-->
+
+
+
+
+
+
+        <div class="statusdiv" >
+            <h3 class="levelh2">Level:</h3>
+
+            <p class="levelp" id="level">1</p>
+
+
+
+
+
+            <h3 class="scoreh2"> Score:</h3>
+            <p class="scorep" id="score">0</p>
+
+            <h3 id="badges"  class="hidden"> Badges:</h3>
+            <img src="images/badge.png" class="badgim" /> 1
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="hidden" id="gameover">
+
+        <img class="logo" src="images/sj" id="logo" />
+        <img class="go" src="images/gameover.png" id="go" />
+        <img class="pa" src="images/playagain.png" id="pa" />
+    </div>
+
+
+
+    <div class="hidden" id="mainmenu">
+        <div id="menu">
+            <nav>
+                <UL>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-play icon-2x"></i>
+                            </div>
+                            <a id="menuplaybtn"><span>play</span></a>
+                        </div>
+                    </li>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-lightbulb icon-2x"></i>
+                            </div>
+                            <a id="instructions"><span>Instructions</span></a>
+                        </div>
+                    </li>
+                    <li class="var_nav">
+                        <div class="link_bg"></div>
+                        <div class="link_title">
+                            <div class=icon>
+                                <i class="icon-wrench icon-2x"></i>
+                            </div>
+                            <a id="settings"><span>Settings</span></a>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="hidden" id="instruction">
+        <img class="backbtn" id="backinst" src="images/back.png" />
+    </div>
+
+</body>
+
+<script src="javascript/component.js "></script>
+<script src="javascript/Astroid2.js "></script>
+<script src="javascript/badges.js "></script>
+
+<script src="javascript/levelup.js "></script>
+
+<script src="javascript/ship.js "></script>
+<script src="javascript/main.js "></script>
+
+
+</html>
+<!--style="position:absolute;left:600; bottom:10; " height="70 " width="50 "-->

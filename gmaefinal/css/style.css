@@ -1,0 +1,318 @@
+#hcan {
+    border: 1px solid saddlebrown;
+    position: absolute;
+}
+
+#container {
+    background: url("../images/mov.gif");
+    position: absolute;
+    z-index: 0;
+    width: 95%;
+    height: 95%;
+}
+
+#ship {
+    position: relative;
+    bottom: 00px;
+    left: 10%;
+    width: 3.5%;
+}
+
+.nocursor {
+    cursor: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.char {
+    background-image: url('../images/space.png');
+    height: 100%;
+    width: 100%;
+}
+
+.instructions {
+    background-image: url('../images/inst.jpg');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.backbtn {
+    position: relative;
+    top: 65%;
+    right: -40%;
+    width: 150px;
+    height: 150px;
+}
+
+.start {
+    background-image: url('../images/mov.gif');
+    height: 100%;
+}
+
+.im {
+    position: relative;
+    width: 20%;
+    height: 20%;
+    bottom: -500px;
+    left: 500px;
+}
+
+.imstart {
+    position: relative;
+    width: 15%;
+    height: 15%;
+    bottom: -120px;
+    left: -400px;
+}
+
+.im1 {
+    position: relative;
+    width: 5%;
+    height: 15%;
+    top: 280px;
+    left: 23%;
+}
+
+.im2 {
+    position: relative;
+    width: 10%;
+    height: 20%;
+    top: 190px;
+    left: 15%;
+}
+
+.im3 {
+    position: relative;
+    width: 10%;
+    height: 18%;
+    bottom: -65;
+    left: 5%;
+}
+
+.logo {
+    position: relative;
+    width: 75%;
+    height: 75%;
+    top: 10px;
+    left: 160px;
+}
+
+.menu {
+    position: relative;
+    left: 500;
+    bottom: 75;
+}
+
+@import url('http://fonts.googleapis.com/css?family=Lato');
+.container {
+    display: block;
+    position: relative;
+    margin: auto;
+    height: 450px;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+    right: 100px;
+    top: 0;
+    padding: 0;
+}
+
+h2 {
+    position: relative;
+    color: #ff217c;
+    font-weight: bolder;
+    align-content: center;
+    font-size: 36;
+    top: -50;
+    left: -500;
+    /*border-bottom: 5px palegoldenrod;
+    border-bottom-style: solid;*/
+}
+
+.container ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    font-style: bolder;
+    font-size: 28;
+    color: #ff217c;
+    display: block;
+    position: relative;
+    float: left;
+    top: -65;
+    width: 100%;
+    height: 100px;
+}
+
+ul li input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+}
+
+ul li label {
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 1.35em;
+    padding: 25px 25px 25px 80px;
+    margin: 10px auto;
+    height: 30px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+ul li:hover label {
+    color: #FFFFFF;
+}
+
+ul li .check {
+    position: absolute;
+    border: 5px solid #AAAAAA;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    top: 30px;
+    left: 20px;
+    z-index: 5;
+}
+
+ul li .check::before {
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    top: 5px;
+    left: 5px;
+    margin: auto;
+    transition: background 0.25s linear;
+}
+
+input[type=radio]:checked~.check {
+    border: 5px solid tomato;
+}
+
+input[type=radio]:checked~.check::before {
+    background: tomato;
+}
+
+input[type=radio]:checked~label {
+    color: tomato;
+}
+
+
+/*.main {
+    background-image: url('mov.gif');
+    height: 100%;
+}*/
+
+.chosenrocket {
+    position: absolute;
+    left: 600;
+    bottom: 10;
+    width: 15%;
+    height: 25%;
+}
+
+
+/*--------------------------------------*/
+
+.gameover {
+    background-image: url('../images/mov.gif');
+    height: 100%;
+}
+
+.go {
+    position: relative;
+    left: -450px;
+}
+
+.pa {
+    position: relative;
+    left: 600px;
+    width: 120px;
+    bottom: -20px;
+    height: 60px;
+}
+
+
+/*-------------*/
+
+.levelh2 {
+    position: relative;
+    top: 10px;
+    left: 100;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.levelp {
+    position: relative;
+    top: -28px;
+    left: 160px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.scoreh2 {
+    position: relative;
+    top: -70px;
+    left: 300;
+    font-size: 18;
+    color: papayawhip;
+    font-family: Brush Script MT, cursive;
+}
+
+.scorep {
+    position: relative;
+    top: -107px;
+    left: 365px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.statusdiv {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 150 px;
+    height: 30px;
+    background-color: black;
+}
+
+.badges {
+    position: relative;
+    top: -150px;
+    left: 900px;
+    font-size: 18;
+    color: papayawhip;
+}
+
+.badgim {
+    position: relative;
+    top: -200px;
+    left: 1000px;
+    font-size: 18;
+    width: 40px;
+    height: 40px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.astroid {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
