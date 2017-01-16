@@ -19,7 +19,7 @@ ul {
     width: 70px;
     height: 70px;
     position: absolute;
-    background: teal;
+    background: #357c92;
     color: #fff;
     z-index: 2;
 }
@@ -54,7 +54,7 @@ ul {
 
 .var_nav:hover .link_bg {
     width: 100%;
-    background: crimson;
+    background: #ff217c;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -128,8 +128,8 @@ span {
 
 .menu2 {
     position: relative;
-    /*background: url("../images/mov.gif");*/
-    background-color: black;
+    background: url("../images/space.png");
+    /*background-color: black;*/
     width: 100%;
     height: 100%;
 }

@@ -35,12 +35,18 @@ var main = {
     },
 
     menuplaybtn: document.getElementById("menuplaybtn"),
+    menusettingsbtn: document.getElementById("settings"),
+    menuinstructionsbtn: document.getElementById("instructions"),
 
 
 
     init: function() {
         main.btnStart.addEventListener('click', main.clkStart);
         main.menuplaybtn.addEventListener('click', main.menuplay);
+        main.menusettingsbtn.addEventListener('click', main.menusettings);
+        main.menuinstructionsbtn.addEventListener('click', main.menuinstructions);
+
+
     },
     startGame: function() {
 
@@ -134,6 +140,36 @@ var main = {
 
 
     menuplay: function() {
+
+
+        main.startGame();
+        main.characterScreen.className = 'hidden';
+        main.firstScreen.className = "hidden";
+        main.gameScreen.className = "nocursor ";
+        main.gameOverScreen.className = "hidden";
+        main.mainmenu.className = "hidden";
+        main.ship.element.src = "images/r33.png";
+
+
+    },
+
+
+    menusettings: function() {
+
+
+
+        main.characterScreen.className = "char";
+        main.firstScreen.className = "hidden";
+        main.gameScreen.className = "hidden ";
+        main.gameOverScreen.className = "hidden";
+        main.mainmenu.className = "hidden";
+
+
+
+    },
+
+
+    menuinstructions: function() {
 
 
         main.startGame();
