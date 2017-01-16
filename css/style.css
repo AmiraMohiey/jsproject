@@ -27,8 +27,9 @@
 }
 
 .char {
-    background-image: url('../images/mov.gif');
-    height: 85%;
+    background-image: url('../images/space.png');
+    height: 100%;
+    width: 100%;
 }
 
 .start {
@@ -40,7 +41,7 @@
     position: relative;
     width: 20%;
     height: 20%;
-    bottom: -400px;
+    bottom: -500px;
     left: 500px;
 }
 
@@ -57,7 +58,7 @@
     width: 5%;
     height: 15%;
     top: 280px;
-    left: 150px;
+    left: 23%;
 }
 
 .im2 {
@@ -65,15 +66,15 @@
     width: 10%;
     height: 20%;
     top: 190px;
-    left: 150px;
+    left: 15%;
 }
 
 .im3 {
     position: relative;
     width: 10%;
-    height: 20%;
-    bottom: -80;
-    left: -90px;
+    height: 18%;
+    bottom: -65;
+    left: 5%;
 }
 
 .logo {
@@ -106,14 +107,14 @@
 
 h2 {
     position: relative;
-    color: palegoldenrod;
+    color: #ff217c;
     font-weight: bolder;
     align-content: center;
     font-size: 36;
     top: -50;
     left: -500;
-    border-bottom: 5px palegoldenrod;
-    border-bottom-style: solid;
+    /*border-bottom: 5px palegoldenrod;
+    border-bottom-style: solid;*/
 }
 
 .container ul {
@@ -126,7 +127,9 @@ h2 {
 }
 
 ul li {
-    color: #AAAAAA;
+    font-style: bolder;
+    font-size: 28;
+    color: #ff217c;
     display: block;
     position: relative;
     float: left;
@@ -292,7 +295,8 @@ body {
     padding: 0;
     margin: 0;
 }
-.astroid{
+
+.astroid {
     position: absolute;
     padding: 0;
     margin: 0;
