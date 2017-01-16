@@ -1,3 +1,4 @@
+
 var main = {
     gameW: 1200,
     gameH: 500,
@@ -11,6 +12,8 @@ var main = {
     shipsrc: "images/r33.png",
     FINISH: false,
     interval: 50,
+   //lvlimg : "./images/earth.gif",
+ //   nlvl:new LevelUp("./images/earth.gif"),
 
     characterScreen: document.getElementById("char"),
     firstScreen: document.getElementById("start"),
@@ -34,6 +37,7 @@ var main = {
     lastGenerat: new Date().getTime(),
     level_speed: parseInt(level.innerText),
     mainmenu: document.getElementById("mainmenu"),
+
 
     random: function(size) {
 
@@ -75,6 +79,7 @@ var main = {
         for (var i = 0; i < main.astroids.length; i++) {
             main.detectCollision(main.ship, main.astroids[i])
         }
+
     
         setTimeout(function() { main.loop(); }, 40);
     },
@@ -214,8 +219,9 @@ var main = {
         interval = setInterval(function() {
             var value = parseInt(score.innerText) + 1;
             main.score.innerText = value;
-            if (value % 30 == 0) {
+            if (value % 5 == 0) {
                 main.inc_level();
+                
             }
         }, 1500)
 
@@ -229,7 +235,7 @@ var main = {
 
         var value2 = parseInt(level.innerText) + 1;
         level.innerText = value2;
-
+  //      main.levelplus(main.nlvl);
 
     },
 
@@ -257,7 +263,21 @@ var main = {
 
 
 
-    }
+    },
+    
+    // levelplus : function(newlevel){
+        
+        
+    //     if (newlevel.out) {
+    //         console.log("died");
+    //         newlevel.kill();
+    //     } 
+    //     else {      
+    //         console.log("move");  
+    //         newlevel.move();
+    //     }
+    //     setTimeout(function() { main.levelplus(nlvl); }, 40);
+    // }
 
 
 
