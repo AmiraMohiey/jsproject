@@ -1,10 +1,9 @@
-
-var gameW=1200;
-var gameH=500;
+var gameW = 1200;
+var gameH = 500;
 var main = {
     lastLoopRun: 0,
     timeInit: 0,
-    shipX: document.innerWidth / 2 ,
+    shipX: document.innerWidth / 2,
     shipY: document.innerHeight / 2,
     shipWidth: 35,
     shipHeight: 60,
@@ -13,11 +12,12 @@ var main = {
     FINISH: false,
     interval: 50,
     astroids: [],
-    astSizes:[50,100,150],
+    astSizes: [50, 100, 150],
     lastGenerat: new Date().getTime(),
+    instructionscreen: document.getElementById("instructions"), // new 
+    btnbackinstruction: document.getElementById("backinst"), // new
 
-
-    random : function(size) {
+    random: function(size) {
 
         return parseInt(Math.random() * size);
     },
@@ -36,53 +36,50 @@ var main = {
                 ship.style.top = e.clientY + 'px';
             }
             //console.log(e.clientX, e.clientY)
-        
+
         }
-        
+
         main.loop();
     },
     loop: function() {
 
-            
+
         main.addAst();
         main.updatePosition();
-            
-        
-        setTimeout(function(){main.loop();},40 );
+
+
+        setTimeout(function() { main.loop(); }, 40);
     },
     addAst: function() {
-          
-          if ( new Date().getTime()-main.lastGenerat>1000 ){   
-            
+
+        if (new Date().getTime() - main.lastGenerat > 1000) {
+
             main.lastGenerat = new Date().getTime();
             var size = main.astSizes[main.random(main.astSizes.length)]
-            var astObj = new Astroid(main.random(gameW),20,size,"./images/astroid.png",main.lastGenerat);
+            var astObj = new Astroid(main.random(gameW), 20, size, "./images/astroid.png", main.lastGenerat);
             main.astroids.push(astObj);
-            
-            }
-    },
-    updatePosition: function(){
 
-       
-        for (var i = 0; i < main.astroids.length; i++)
-        {
-            
-           
-            if(main.astroids[i].out)
-                {
-               
+        }
+    },
+    updatePosition: function() {
+
+
+        for (var i = 0; i < main.astroids.length; i++) {
+
+
+            if (main.astroids[i].out) {
+
                 main.astroids[i].kill();
-                
+
                 main.astroids.splice(i, 1);
-                }            
-            else
-                main.astroids[i].y +=2 ;
-            
-            
+            } else
+                main.astroids[i].y += 2;
+
+
         }
 
     }
-   
+
 };
 
 
