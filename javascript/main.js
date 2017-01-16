@@ -8,7 +8,7 @@ var main = {
     shipWidth: 50,
     shipHeight: 100,
     iterations: 0,
-    shipsrc: "images/r3.png",
+    shipsrc: "images/r33.png",
     FINISH: false,
     interval: 50,
 
@@ -42,17 +42,14 @@ var main = {
 
     init: function() {
         main.btnStart.addEventListener('click', main.clkStart);
-        main.menuplaybtn.addEventListener('click', main.menuplay);
-        main.menusettingsbtn.addEventListener('click', main.menusettings);
-        main.menuinstructionsbtn.addEventListener('click', main.menuinstructions);
 
 
     },
     startGame: function() {
-        console.log("start");
-        main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
-        window.onmousemove = function(e) {
-            if (!main.FINISH) {
+        if (!main.FINISH) {
+            main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
+            window.onmousemove = function(e) {
+          
                 if (e.clientX < 1210) {
                     ship.style.left = e.clientX + 'px';
                 }
@@ -62,8 +59,9 @@ var main = {
             }
 
 
-        }
+        
         main.inc_score();
+        }
         main.loop();
     },
 
@@ -134,12 +132,16 @@ var main = {
 
 
     clkStart: function() {
+        main.FINISH=false;
         main.btnChooseCharachter.addEventListener('click', main.chooseCharacter);
         main.firstScreen.className = "hidden";
         main.gameScreen.className = "hidden";
         main.characterScreen.className = "hidden";
         main.gameOverScreen.className = "hidden";
         main.mainmenu.className = "menu2";
+        main.menuplaybtn.addEventListener('click', main.menuplay);
+        main.menusettingsbtn.addEventListener('click', main.menusettings);
+        main.menuinstructionsbtn.addEventListener('click', main.menuinstructions);
 
     },
 
@@ -153,8 +155,7 @@ var main = {
         main.gameScreen.className = "nocursor ";
         main.gameOverScreen.className = "hidden";
         main.mainmenu.className = "hidden";
-        main.ship.element.src = "images/r33.png";
-
+     
 
     },
 
