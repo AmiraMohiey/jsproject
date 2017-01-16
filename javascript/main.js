@@ -20,6 +20,12 @@ var main = {
     btnStart: document.getElementById("letstart"),
     btnChooseCharachter: document.getElementById("back"),
     btnPlayAgain: document.getElementById("pa"),
+    menuplaybtn: document.getElementById("menuplaybtn"),
+    menusettingsbtn: document.getElementById("settings"),
+    menuinstructionsbtn: document.getElementById("instructions"),
+
+    audCollision : new Audio("blast.mp3"),
+    audstart : new Audio("Space Odyssey.mp3"),
 
     score: document.getElementById("score"),
     level: document.getElementById("level"),
@@ -34,19 +40,17 @@ var main = {
         return parseInt(Math.random() * size);
     },
 
-    menuplaybtn: document.getElementById("menuplaybtn"),
-    menusettingsbtn: document.getElementById("settings"),
-    menuinstructionsbtn: document.getElementById("instructions"),
-
+  
 
 
     init: function() {
         main.btnStart.addEventListener('click', main.clkStart);
-
+        main.audstart.currentTime=10;
+        main.audstart.play();
 
     },
     startGame: function() {
-        
+            main.audstart.pause();
             main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
             window.onmousemove = function(e) {
             if (!main.FINISH) {  
@@ -121,7 +125,8 @@ var main = {
             obj1x + obj1w > obj2x &&
             obj1y < obj2y + obj2h &&
             obj1h + obj1y > obj2y) {
-            main.endGame();
+                main.audCollision.play();
+                main.endGame();
         }
 
     },
@@ -132,7 +137,8 @@ var main = {
 
     clkStart: function() {
         
-        
+        main.audstart.currentTime=10;
+        main.audstart.play();
         main.firstScreen.className = "hidden";
         main.gameScreen.className = "hidden";
         main.characterScreen.className = "hidden";
