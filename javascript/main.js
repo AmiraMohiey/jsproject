@@ -49,7 +49,7 @@ var main = {
 
     },
     startGame: function() {
-
+        console.log("start");
         main.ship = new Ship(main.shipsrc, main.shipWidth, main.shipHeight, main.shipX, main.shipY, 'ship');
         window.onmousemove = function(e) {
             if (!main.FINISH) {
@@ -82,9 +82,11 @@ var main = {
         if (new Date().getTime() - main.lastGenerat > 1000) {
 
             main.lastGenerat = new Date().getTime();
-            var size = main.astSizes[main.random(main.astSizes.length)]
-            var astObj = new Astroid(main.random(main.gameW), 20, size, "./images/asteroid1.gif", Math.random() >= 0.5, main.lastGenerat);
+            var astObj = new Astroid("./images/asteroid1.gif");
+
             main.astroids.push(astObj);
+    
+            main.astroids;
 
         }
     },
@@ -92,15 +94,18 @@ var main = {
 
 
         for (var i = 0; i < main.astroids.length; i++) {
+
+            
             if (main.astroids[i].out) {
 
                 main.astroids[i].kill();
 
                 main.astroids.splice(i, 1);
-            } else {
-                if (main.astroids[i].move)
-                    main.astroids[i].x += main.level_speed;
-                main.astroids[i].y += main.level_speed;
+            } 
+            else 
+            {1
+                
+                main.astroids[i].move(main.level_speed);
             }
         }
 
@@ -240,7 +245,7 @@ var main = {
     },
 
     endGame: function() {
-        console.log("endgame");
+       // console.log("endgame");
         main.firstScreen.className = "hidden";
         main.gameScreen.className = "hidden";
         main.gameOverScreen.className = "gameover";
@@ -248,11 +253,11 @@ var main = {
         main.ship.kill();
         main.btnPlayAgain.addEventListener('click', main.clkStart);
         for (var i = 0; i < main.astroids.length; i++) {
-            console.log(i, main.astroids[i]);
+          //  console.log(i, main.astroids[i]);
             main.astroids[i].kill();
-            console.log(main.astroids[i]);
+           // console.log(main.astroids[i]);
             main.astroids.splice(i, 1);
-            console.log(main.astroids[i]);
+          //  console.log(main.astroids[i]);
 
         }
         main.FINISH = true;
