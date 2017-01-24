@@ -1,6 +1,6 @@
 var main = {
-    gameW: 1200,
-    gameH: 500,
+    gameW: 1400,
+    gameH: 570,
     lastLoopRun: 0,
     timeInit: 0,
     shipX: document.innerWidth / 2,
@@ -85,10 +85,10 @@ var main = {
         main.updatePosition();
         main.mvlvl();
         for (var i = 0; i < main.astroids.length; i++) {
-            main.detectCollision(main.ship, main.astroids[i])
+            main.detectCollision(main.ship, main.astroids[i],i)
         }
         for (var i = 0; i < main.badges.length; i++) {
-            main.detectCollision(main.ship, main.badges[i])
+            main.detectCollision(main.ship, main.badges[i],i)
         }
 
 
@@ -151,8 +151,8 @@ var main = {
         }
 
     },
-    detectCollision: function(obj1, obj2) {
-
+    detectCollision: function(obj1, obj2,i) {
+        
         var obj1x = parseInt(obj1.element.style.left);
         var obj1y = parseInt(obj1.element.style.top);
         var obj1w = parseInt(obj1.element.style.width);
@@ -165,10 +165,12 @@ var main = {
             obj1x + obj1w > obj2x &&
             obj1y < obj2y + obj2h &&
             obj1h + obj1y > obj2y) {
+            console.log(i);
             if(obj2.name=="astroid"){
                 main.audCollision.play();
                 if(!main.armor){
                     obj2.kill();
+                    main.astroids.splice(i, 1);
                     obj2=null;
                     main.endGame();
                     console.log("ops");
@@ -176,6 +178,7 @@ var main = {
                     main.armor=false;
                     obj2.kill();
                     obj2=null;
+                    main.astroids.splice(i, 1);
                     console.log("armorlost");
                     main.badgge.className = "hidden";
                 }
@@ -183,12 +186,13 @@ var main = {
             else {
                 main.armor=true;
                 obj2.kill();
+                main.badges.splice(i, 1);                
                 obj2=null;
                 console.log("armoryay");
                 main.badgge.className = "badges";
             }
             
-            console.log(obj2);            
+                        
            
         
         }
@@ -315,7 +319,7 @@ var main = {
         main.gameOverScreen.className = "gameover";
         main.characterScreen.className = "hidden";
         main.ship.kill();
-        main.btnPlayAgain.addEventListener('click', main.clkStart);
+        /*main.btnPlayAgain.addEventListener('click', main.clkStart);
         for (var i = 0; i < main.astroids.length; i++) {
             //  console.log(i, main.astroids[i]);
             main.astroids[i].kill();
@@ -338,7 +342,8 @@ var main = {
         clearInterval(interval);
         if(main.lvlexst){
                 main.nlvl.kill();
-        }
+        }*/
+        setTimeout(function() { location.reload(); }, 1000);
 
 
 
